@@ -38,7 +38,7 @@ h1 {
 
 .przycisk_rozwijany:hover .lista {
     display: block;
-
+    cursor: pointer;
 }
 
 

@@ -25,6 +25,7 @@ float:left;
 	font-size:150%;
 	text-align: left;
 	float: left;
+	cursor: pointer;
 }
 
 .lista {

@@ -1,5 +1,5 @@
 *{
-	font-family:Comic Sans MS;
+	font-family:Arial;
 }
 .circle{
   position: absolute;
@@ -92,7 +92,6 @@ font-size: 350%;
 }
 
 li {
-	font-family:Comic Sans MS;
 	font-size:150%;
 	background-color: rgba(232, 234, 237, 1);
 	margin-left:20%;

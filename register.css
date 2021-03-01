@@ -20,6 +20,16 @@ body
 	position: fixed;
 }
 
+footer
+{
+	padding-left:5px;
+	padding-right:5px;
+	background-color: #6a93cb;
+	background-image: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);
+	bottom: 0px;
+	text-align:right;
+}
+
 .circle{
   position: absolute;
   border-radius: 50%;

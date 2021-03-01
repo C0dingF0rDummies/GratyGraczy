@@ -115,6 +115,7 @@ float:left;
 
 .przycisk_rozwijany:hover .lista {
     display: block;
+	cursor: hand;
 }
 
 

@@ -1,27 +1,25 @@
 *{
 	font-family:Arial;
 }
-body
-{
-
+body {
   background: #3399ff;
   height: 100px;
   margin: 0 auto;
 }
-img{
-float:left;
+	img {
+	float:left;
 }
 
 h1 {
-text-align: center;
-font: white;
-font-size: 350%;
-float:left;
+	text-align: center;
+	font: white;
+	font-size: 350%;
+	float:left;
 }
 
 .przycisk_rozwijany {
-    position: relative;
-    display: inline-block;
+	position: relative;
+	display: inline-block;
 	margin-left:10%;
 	font-size:150%;
 	text-align: left;
@@ -44,39 +42,36 @@ float:left;
 }
 
 
-.registation
-{
-margin-left:10px;
-float: right;
+.registation {
+	margin-left:10px;
+	float: right;
 }
 
-.button1{
-font-size:100%;
+.button1 {
+	font-size:100%;
 }
 
-.button2{
-width:100%;
-padding:5%;
-font-size:75%;
-background:transparent;
+.button2 {
+	width:100%;
+	padding:5%;
+	font-size:75%;
+	background:transparent;
 }
 
-.login
-{
-float:right;
+.login {
+	float:right;
 }
 
-nav{
-clear:left;
-padding-top:20px;
-padding-bottom:20px;
-background-color: #6a93cb;
-background-image: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);
-height:30px;
+nav {
+	clear:left;
+	padding-top:20px;
+	padding-bottom:20px;
+	background-color: #6a93cb;
+	background-image: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);
+	height:30px;
 }
 
-main
-{
+main {
 height:1200px;
 }
 
@@ -89,38 +84,36 @@ height:1200px;
     text-align: center;
     border-radius: 25px;
     opacity: 0.97;
-
-float:right;
+	float:right;
 }
 
 .p1{
-font-size:300%;
+	font-size:300%;
 }
 
 .nazwa{
-text-align:center;
-font-size:200%;
+	text-align:center;
+	font-size:200%;
 }
 
 .cena{
-text-align:center;
-font-size:90%;
+	text-align:center;
+	font-size:90%;
 }
 
 .czas{
-text-align:center;
-font-size:90%;
+	text-align:center;
+	font-size:90%;
 }
 
 footer
 {
-padding-left:5px;
-padding-right:5px;
-background-color: #6a93cb;
-background-image: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);
-
-bottom: 0px;
-text-align:right;
+	padding-left:5px;
+	padding-right:5px;
+	background-color: #6a93cb;
+	background-image: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);
+	bottom: 0px;
+	text-align:right;
 }
 
 .panel{
@@ -138,7 +131,7 @@ text-align:right;
 	position: fixed;
 }
 .pepejam{
-margin-right:10%;
+	margin-right:10%;
 	float: left;
 }
 
@@ -418,16 +411,16 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
 	margin-top:10%;
 	padding-bottom:3%;
 	padding-top:1%;
-margin-left:30%;
-margin-right:30%;
-background-color: rgba(232, 234, 237, 1);
+	margin-left:30%;
+	margin-right:30%;
+	background-color: rgba(232, 234, 237, 1);
     text-align: center;
     border-radius: 25px;
     opacity: 0.97;
 }
 
 .audio{
-margin-top:20%;
+	margin-top:20%;
 }
 	
 .circle{

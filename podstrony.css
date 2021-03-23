@@ -136,7 +136,7 @@ footer {
 
 .menu
 {
-	bbackground-color: #1E90FF;
+	background: linear-gradient(to bottom, #33ccff 8%, #ffffff 91%);
 	font-size:70%;
 	padding-right:10%;
 	border-radius: 25px;

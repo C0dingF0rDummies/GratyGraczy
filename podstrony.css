@@ -133,3 +133,14 @@ footer {
   bottom: 0px;
   text-align: right;
 }
+
+.menu
+{
+	font-size:70%;
+	padding-right:10%;
+	background-color: rgba(232, 234, 237, 1);
+	border-radius: 25px;
+    opacity: 0.97;
+float:left;
+clear:left;	
+}

@@ -136,6 +136,8 @@ footer {
 
 .menu
 {
+	height:100px;
+	width:100px;
 	background-image: url('bgim.jpg');
 	font-size:70%;
 	padding-right:10%;

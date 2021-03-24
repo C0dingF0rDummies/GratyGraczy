@@ -150,14 +150,17 @@ footer {
 
 a:link{
 	color:black;
+	text-decoration:none;
 }
 
 a:visited{
 	color:black;
+	text-decoration:none;
 }
 
 a:hover{
 	color:purple;
+	text-decoration:none;
 }
 
 

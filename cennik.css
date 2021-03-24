@@ -147,3 +147,31 @@ table, tr, th, td {
   margin-left:auto;
   margin-right: auto;
 }
+
+.menu
+{
+	margin-top:3%;
+	margin-left:1%;
+	background: linear-gradient(to bottom, #3399ff 8%, #ffffff 91%);
+	padding-right:8%;
+	border-radius: 25px;
+	border-style:solid;
+	opacity: 0.97;
+	float:left;
+	clear:left;	
+}
+
+a:link{
+	color:black;
+	text-decoration:none;
+}
+
+a:visited{
+	color:black;
+	text-decoration:none;
+}
+
+a:hover{
+	color:purple;
+	text-decoration:none;
+}

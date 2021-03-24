@@ -90,6 +90,7 @@ main {
     padding-right: 2%;
     text-align: center;
     border-radius: 25px;
+    border-style:solid;
     opacity: 0.97;
     float: right;
 }
@@ -431,6 +432,7 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
     background-color: rgba(232, 234, 237, 1);
     text-align: center;
     border-radius: 25px;
+    border-style:solid;
     opacity: 0.97;
 }
 

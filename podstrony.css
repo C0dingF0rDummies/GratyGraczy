@@ -148,14 +148,16 @@ footer {
 	clear:left;	
 }
 
-a:link
-{
+a:link{
 	color:black;
 }
 
-a:hover
-{
-	color:black;
+a:visited{
+	color:red;
+}
+
+a:hover{
+	color:yellow;
 }
 
 

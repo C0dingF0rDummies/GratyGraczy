@@ -35,7 +35,12 @@ h1 {
     float: left;
     cursor: pointer;
 }
-
+.przycisk_rozwijany:hover{
+    background-color:#01e1ff;
+}
+.przyciski{
+    margin-left: 5%;
+}
 .lista {
     display: none;
     position: absolute;
@@ -55,15 +60,18 @@ h1 {
     float: right;
 }
 
-.button1 {
+.button2 {
     font-size: 100%;
 }
 
-.button2 {
+.button {
     width: 100%;
     padding: 5%;
     font-size: 75%;
     background: transparent;
+}
+.button:hover{
+    background-color: #01ffd5;
 }
 
 .login {

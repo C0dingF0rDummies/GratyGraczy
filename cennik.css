@@ -76,7 +76,9 @@
     transform: scale(0.8);
   }
 }
-
+.ripple-background {
+  z-index: 1;
+}
 body {
   background: #3399ff;
   height: 100px;
@@ -98,14 +100,19 @@ img {
 
 .glowna {
   background-color: rgba(232, 234, 237, 1);
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-top: 10%;
+  margin-left: 45%;
+  margin-right: 1%;
+  margin-top: 6%;
   padding-top: 2%;
   padding-bottom: 2%;
   text-align: center;
   border-radius: 25px;
   opacity: 0.97;
+  border-style: solid;
+}
+.tabelka{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cena {
@@ -147,17 +154,19 @@ table, tr, th, td {
   margin-left:auto;
   margin-right: auto;
 }
+main {
+  margin-bottom: 0px;
+}
 
-.menu
-{
-	margin-left:1%;
-	background: linear-gradient(to bottom, #3399ff 8%, #ffffff 91%);
-	padding-right:8%;
-	border-radius: 25px;
-	border-style:solid;
-	opacity: 0.97;
-	float:left;
-	clear:left;	
+.menu {
+  margin-top: 10%;
+  margin-left: 1%;
+  background: linear-gradient(to bottom, #3399ff 8%, #ffffff 91%);
+  padding-right: 8%;
+  border-radius: 25px;
+  border-style: solid;
+  float: left;
+  opacity: 0.97;
 }
 
 a:link{

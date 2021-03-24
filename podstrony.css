@@ -147,3 +147,8 @@ footer {
 	float:left;
 	clear:left;	
 }
+
+a:hover
+{
+	color:black;
+}

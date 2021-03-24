@@ -137,8 +137,8 @@ footer {
 
 .menu
 {
-	padding-top:2%;
-	padding-left:1%;
+	margin-top:2%;
+	margin-left:1%;
 	background: linear-gradient(to bottom, #3399ff 8%, #ffffff 91%);
 	padding-right:10%;
 	border-radius: 25px;

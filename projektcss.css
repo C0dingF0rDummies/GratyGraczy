@@ -35,11 +35,11 @@ h1 {
     float: left;
     cursor: pointer;
 }
-.przycisk_rozwijany:hover{
-}
+
 .przyciski{
     margin-left: 5%;
 }
+
 .lista {
     display: none;
     position: absolute;

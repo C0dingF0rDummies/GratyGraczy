@@ -14,7 +14,43 @@
 	<img src="Logo_Strony_tlo.png" alt="logo"></img>
 	<title>Graty Graczy</title>
 </head>
+<script>
+function czasDoWydarzenia(rok, miesiac, dzien, godzina, minuta, sekunda, milisekunda)
+{
+	var aktualnyCzas = new Date();
+	var dataWydarzenia = new Date(rok, miesiac, dzien, godzina, minuta, sekunda, milisekunda);
+	var pozostalyCzas = dataWydarzenia.getTime() - aktualnyCzas.getTime();
+	if (pozostalyCzas > 0)
+	{						
+		var s = pozostalyCzas / 1000;	// sekundy
+		var min = s / 60;				// minuty
+		var h = min / 60;				// godziny
+		var dni = h / 24;   			// dni
 
+		var sLeft = Math.floor(s  % 60);	// pozosta³o sekund		
+		var minLeft = Math.floor(min % 60);	// pozosta³o minut
+		var hLeft = Math.floor(h%24);		// pozosta³o godzin
+		var dniLeft = Math.floor(dni-30);		// pozosta³o dni
+		
+		if (minLeft < 10)
+		  minLeft = "0" + minLeft;
+		if (sLeft < 10)
+		  sLeft = "0" + sLeft;
+		
+		return dniLeft + "dni : " + hLeft + "h : " + minLeft + "min : " + sLeft + "s";
+	}
+	else
+		return "Zdarzenie mia³o ju¿ miejsce na naszym globie, to ju¿ jest historia i ju¿ nie powróci!";
+}
+					
+window.onload = function()
+{
+	idElement = "pczas";
+	document.getElementById(idElement).innerHTML = czasDoWydarzenia(2021, 06, 01, 20, 0, 0, 0);
+	setInterval("document.getElementById(idElement).innerHTML = czasDoWydarzenia(2021, 06, 01, 20, 0, 0, 0)", 1000);
+};
+
+</script>
 <body>
 	<div class="h1">
 		<h1>Graty Graczy</h1>
@@ -102,7 +138,7 @@
 				<div class="cena"><s>4300zÅ‚</s> </p>
 					<div class="cena">3400zÅ‚ </p>
 						<div class="czas">PozostaÅ‚y Czas:</p>
-							<div class="czas">TU BÄ˜DZIE CZAS</p>
+							<div id="pczas"></p>
 							</div>
 						</div>
 					</div>

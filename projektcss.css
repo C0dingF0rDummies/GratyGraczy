@@ -522,3 +522,11 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
         transform: scale(0.8);
     }
 }
+
+#pczas
+{
+	border-style:solid;
+	border-radius:25px;
+	margin-bottom:10%;
+	 background-image: linear-gradient(to right, #ff0000, #ff003f, #ff006c, #ff0098, #ea00c2, #b85beb, #757eff, #0094ff, #00baff, #00d9fe, #00f0b6, #00ff4d);
+}

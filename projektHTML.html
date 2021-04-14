@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
 	<meta name="description" content="Sklep internetowy" />
 	<meta name="keywords" content="sklep internetowy graty graczy" />
 	<meta name="author" content="Mateusz Wyrzykowski, MichaÄ¹Â‚ Szymczyk, Kamil Gerek">
@@ -12,57 +12,77 @@
 	<link rel="shortcut icon" href="./Logo_Strony_tlo.png" type="image/x-icon">
 	<link rel="stylesheet" href="./projektcss.css" type="text/css" />
 	<img src="Logo_Strony_tlo.png" alt="logo"></img>
+	<script defer src="./register.js"></script>
 	<title>Graty Graczy</title>
 </head>
 <script>
-function czasDoWydarzenia(rok, miesiac, dzien, godzina, minuta, sekunda, milisekunda)
-{
-	var aktualnyCzas = new Date();
-	var dataWydarzenia = new Date(rok, miesiac, dzien, godzina, minuta, sekunda, milisekunda);
-	var pozostalyCzas = dataWydarzenia.getTime() - aktualnyCzas.getTime();
-	if (pozostalyCzas > 0)
-	{						
-		var s = pozostalyCzas / 1000;	// sekundy
-		var min = s / 60;				// minuty
-		var h = min / 60;				// godziny
-		var dni = h / 24;   			// dni
+	function czasDoWydarzenia(rok, miesiac, dzien, godzina, minuta, sekunda, milisekunda) {
+		var aktualnyCzas = new Date();
+		var dataWydarzenia = new Date(rok, miesiac, dzien, godzina, minuta, sekunda, milisekunda);
+		var pozostalyCzas = dataWydarzenia.getTime() - aktualnyCzas.getTime();
+		if (pozostalyCzas > 0) {
+			var s = pozostalyCzas / 1000;	// sekundy
+			var min = s / 60;				// minuty
+			var h = min / 60;				// godziny
+			var dni = h / 24;   			// dni
 
-		var sLeft = Math.floor(s  % 60);	// pozostało sekund		
-		var minLeft = Math.floor(min % 60);	// pozostało minut
-		var hLeft = Math.floor(h%24);		// pozostało godzin
-		var dniLeft = Math.floor(dni);		// pozostało dni
-		
-		if (minLeft < 10)
-		  minLeft = "0" + minLeft;
-		if (sLeft < 10)
-		  sLeft = "0" + sLeft;
-		
-		return dniLeft + "dni : " + hLeft + "h : " + minLeft + "min : " + sLeft + "s";
+			var sLeft = Math.floor(s % 60);	// pozostało sekund		
+			var minLeft = Math.floor(min % 60);	// pozostało minut
+			var hLeft = Math.floor(h % 24);		// pozostało godzin
+			var dniLeft = Math.floor(dni);		// pozostało dni
+
+			if (minLeft < 10)
+				minLeft = "0" + minLeft;
+			if (sLeft < 10)
+				sLeft = "0" + sLeft;
+
+			return dniLeft + "dni : " + hLeft + "h : " + minLeft + "min : " + sLeft + "s";
+		}
+		else
+			return "Zdarzenie miało już miejsce na naszym globie, to już jest historia i już nie powróci!";
 	}
-	else
-		return "Zdarzenie miało już miejsce na naszym globie, to już jest historia i już nie powróci!";
-}
-					
-window.onload = function()
-{
-	idElement = "pczas";
-	document.getElementById(idElement).innerHTML = czasDoWydarzenia(2021, 5, 01, 20, 0, 0, 0); // 0->styczeń
-	setInterval("document.getElementById(idElement).innerHTML = czasDoWydarzenia(2021, 06, 01, 20, 0, 0, 0)", 1000);
-};
 
+	window.onload = function () {
+		idElement = "pczas";
+		document.getElementById(idElement).innerHTML = czasDoWydarzenia(2021, 5, 01, 20, 0, 0, 0); // 0->styczeń
+		setInterval("document.getElementById(idElement).innerHTML = czasDoWydarzenia(2021, 06, 01, 20, 0, 0, 0)", 1000);
+	};
+	let stan = localStorage.getItem("stan")
+	let nazwa = localStorage.getItem("nazwa")
+	if (stan == 1) {
+		var h = document.createElement("P")
+		h.className = "loginklient";
+		var t = document.createTextNode("Witaj"+nazwa); 
+		h.appendChild(t); 
+		document.body.appendChild(h);    
+		var btn = document.createElement("BUTTON");
+		btn.innerHTML = "Wyloguj";
+		btn.className = "profil";
+		btn.onclick = function(){wyloguj()}
+		document.body.appendChild(btn);
+	}
+	else {
+		localStorage.setItem("stan", 0)
+	}
+	if (stan == 0) {
+		var btn = document.createElement("BUTTON");
+		btn.innerHTML = "Rejestracja";
+		btn.className = "profil";
+		btn.onclick = function(){teleport()}
+		document.body.appendChild(btn);
+	}
+	function teleport(){
+		window.location.assign("./register.html")
+	}
+	function wyloguj(){
+		localStorage.setItem("stan", 0)
+		window.location.assign("./projektHTML.html")
+	}
 </script>
+
 <body>
 	<div class="h1">
 		<h1>Graty Graczy</h1>
-	</div>
-	<div class="guziki">
-		<div class="registation">
-			<button class="button2" onclick="location.href='./register.html'">REGISTER</button>
-		</div>
-		<div class="login">
-			<button class="button2" onclick="location.href='./login.html'">LOGIN</button>
-		</div>
-	</div>
 	<nav>
 		<div class='ripple-background'>
 			<div class='circle xxlarge shade1'></div>
@@ -72,61 +92,61 @@ window.onload = function()
 			<div class='circle small shade5'></div>
 		</div>
 		<div class="przyciski">
-		<div class="przycisk_rozwijany">
-			<span> <b>Gotowe Komputery</b> </span>
-			<div class="lista">
-				<button class="button"
-					onclick="location.href='https://www.x-kom.pl/p/597369-desktop-lenovo-ideacentre-510-15-i3-9100-8gb-256-win10.html'">Zestaw
-					za 2000zÅ‚</button>
-				<button class="button"
-					onclick="location.href='https://www.x-kom.pl/p/596125-desktop-dell-vostro-3888-mt-i5-10400-16gb-4801tb-win10p.html'">Zestaw
-					za 3000zÅ‚</button>
-				<button class="button"
-					onclick="location.href='https://www.x-kom.pl/p/597042-desktop-hp-desktop-i7-10700-16gb-512-win10.html'">Zestaw
-					za 4000zÅ‚</button>
-				<button class="button"
-					onclick="location.href='https://www.x-kom.pl/p/628696-desktop-x-kom-g4m3r-500-i5-9400f-16gb-1tb-rtx2060.html#Opinie'">Zestaw
-					za 5000zÅ‚</button>
+			<div class="przycisk_rozwijany">
+				<span> <b>Gotowe Komputery</b> </span>
+				<div class="lista">
+					<button class="button"
+						onclick="location.href='https://www.x-kom.pl/p/597369-desktop-lenovo-ideacentre-510-15-i3-9100-8gb-256-win10.html'">Zestaw
+						za 2000zÅ‚</button>
+					<button class="button"
+						onclick="location.href='https://www.x-kom.pl/p/596125-desktop-dell-vostro-3888-mt-i5-10400-16gb-4801tb-win10p.html'">Zestaw
+						za 3000zÅ‚</button>
+					<button class="button"
+						onclick="location.href='https://www.x-kom.pl/p/597042-desktop-hp-desktop-i7-10700-16gb-512-win10.html'">Zestaw
+						za 4000zÅ‚</button>
+					<button class="button"
+						onclick="location.href='https://www.x-kom.pl/p/628696-desktop-x-kom-g4m3r-500-i5-9400f-16gb-1tb-rtx2060.html#Opinie'">Zestaw
+						za 5000zÅ‚</button>
+				</div>
 			</div>
-		</div>
-		<div class="przycisk_rozwijany">
-			<span> <b>Laptopy i Tablety</b> </span>
-			<div class="lista">
-				<button class="button" onclick="location.href='./gaming.html'">Gaming</button>
-				<button class="button" onclick="location.href='./laptopy.html'">Laptopy/Notebooki</button>
-				<button class="button" onclick="location.href='./2w1.html'">Laptopy 2w1</button>
-				<button class="button" onclick="location.href='./tablety.html'">Tablety</a></button>
+			<div class="przycisk_rozwijany">
+				<span> <b>Laptopy i Tablety</b> </span>
+				<div class="lista">
+					<button class="button" onclick="location.href='./gaming.html'">Gaming</button>
+					<button class="button" onclick="location.href='./laptopy.html'">Laptopy/Notebooki</button>
+					<button class="button" onclick="location.href='./2w1.html'">Laptopy 2w1</button>
+					<button class="button" onclick="location.href='./tablety.html'">Tablety</a></button>
+				</div>
 			</div>
-		</div>
-		<div class="przycisk_rozwijany">
-			<span><b> PodzespoÅ‚y Komputerowe</b> </span>
-			<div class="lista">
-				<button class="button" onclick="location.href='./karty.html'">Karty Graficzne</button>
-				<button class="button" onclick="location.href='./procesory.html'">Procesory</button>
-				<button class="button" onclick="location.href='./plyty.html'">PÅ‚yty GÅ‚Ã³wne</button>
-				<button class="button" onclick="location.href='./ram.html'">PamiÄ™ci RAM</button>
-				<button class="button" onclick="location.href='./dyski.html'">Dyski</button>
-				<button class="button" onclick="location.href='./zasilacze.html'">Zasilacze</button>
-				<button class="button" onclick="location.href='./chlodzenia.html'">ChÅ‚odzenia</a></button>
+			<div class="przycisk_rozwijany">
+				<span><b> PodzespoÅ‚y Komputerowe</b> </span>
+				<div class="lista">
+					<button class="button" onclick="location.href='./karty.html'">Karty Graficzne</button>
+					<button class="button" onclick="location.href='./procesory.html'">Procesory</button>
+					<button class="button" onclick="location.href='./plyty.html'">PÅ‚yty GÅ‚Ã³wne</button>
+					<button class="button" onclick="location.href='./ram.html'">PamiÄ™ci RAM</button>
+					<button class="button" onclick="location.href='./dyski.html'">Dyski</button>
+					<button class="button" onclick="location.href='./zasilacze.html'">Zasilacze</button>
+					<button class="button" onclick="location.href='./chlodzenia.html'">ChÅ‚odzenia</a></button>
+				</div>
 			</div>
-		</div>
-		<div class="przycisk_rozwijany">
-			<span> <b>UrzÄ…dzenia Peryferyjne</b> </span>
-			<div class="lista">
-				<button class="button" onclick="location.href='./sluchawki.html'">SÅ‚uchawki</button>
-				<button class="button" onclick="location.href='./myszki.html'">Myszki</button>
-				<button class="button" onclick="location.href='./klawiatury.html'">Klawiatury</button>
-				<button class="button" onclick="location.href='./podkladki.html'">PodkÅ‚adki pod mysz</button>
-				<button class="button" onclick="location.href='./pendrive.html'">Pendrive'y</button>
-				<button class="button" onclick="location.href='./kable.html'">Kable</a></button>
+			<div class="przycisk_rozwijany">
+				<span> <b>UrzÄ…dzenia Peryferyjne</b> </span>
+				<div class="lista">
+					<button class="button" onclick="location.href='./sluchawki.html'">SÅ‚uchawki</button>
+					<button class="button" onclick="location.href='./myszki.html'">Myszki</button>
+					<button class="button" onclick="location.href='./klawiatury.html'">Klawiatury</button>
+					<button class="button" onclick="location.href='./podkladki.html'">PodkÅ‚adki pod mysz</button>
+					<button class="button" onclick="location.href='./pendrive.html'">Pendrive'y</button>
+					<button class="button" onclick="location.href='./kable.html'">Kable</a></button>
+				</div>
 			</div>
-		</div>
-		<div class="przycisk_rozwijany">
-			<span onclick="location.href='./cennik.html'"> <b>Cennik usÅ‚ug</b> </span>
-		</div>
-		<div class="przycisk_rozwijany">
-			<span onclick="location.href='./galeria.html'"> <b>Galeria</b></span>
-		</div>
+			<div class="przycisk_rozwijany">
+				<span onclick="location.href='./cennik.html'"> <b>Cennik usÅ‚ug</b> </span>
+			</div>
+			<div class="przycisk_rozwijany">
+				<span onclick="location.href='./galeria.html'"> <b>Galeria</b></span>
+			</div>
 		</div>
 	</nav>
 
@@ -138,7 +158,8 @@ window.onload = function()
 				<div class="cena"><s>4300zÅ‚</s> </p>
 					<div class="cena">3400zÅ‚ </p>
 						<div class="czas">PozostaÅ‚y Czas:</p>
-							<div id="pczas"></p>
+							<div id="pczas">
+								</p>
 							</div>
 						</div>
 					</div>

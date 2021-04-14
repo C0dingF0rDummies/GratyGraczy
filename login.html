@@ -11,6 +11,7 @@
 	<meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
 	<meta http-equiv="Content-Language" content="pl" />
 	<link rel="stylesheet" href="./login.css" type="text/css" />
+	<script defer src="./register.js"></script>
 	<title>Sign-In</title>
 </head>
 
@@ -26,18 +27,18 @@
 	<main>
 		<div id="error"></div>
 
-		<div class="panel">
+		<div class="login">
 			<h1>Zaloguj się<br>na</h1>
 
 			<img src="Logo_Strony_tlo.png" alt="logo">
 
 			<form id="form" action="/" method="GET">
-				<label for="login">login/e-mail:</label><br>
-				<input type="text" id="login" name="login" required><br>
-				<label for="password">hasło:</label><br>
-				<input type="password" id="password" name="password" required><br><br>
+				<label for="login">Login/E-mail:</label><br>
+				<input type="text" id="se" name="login" required><br>
+				<label for="password">Hasło:</label><br>
+				<input type="password" id="sp" name="password" required><br><br>
 				<button type="reset" id="reset">Zresetuj hasło</button>
-				<button type="submit" id="submit">Zaloguj</button><br><br>
+				<button type="submit" onclick="login()">Zaloguj</button><br><br>
 			</form>
 		</div>
 		</div>

@@ -34,19 +34,21 @@
 			<img src="Logo_Strony_tlo.png" alt="logo">
 
 			<form id="form" action="/" method="GET">
-				<label for="fname">imię:</label><br>
+				<label for="fname">Imię:</label><br>
 				<input type="text" id="fname" name="fname" required><br>
-				<label for="sname">nazwisko:</label><br>
+				<label for="sname">Nazwisko:</label><br>
 				<input type="text" id="sname" name="sname" required><br>
-				<label for="mail">e-mail:</label><br>
-				<input type="text" id="mail" name="mail" required><br>
-				<label for="password">hasło:</label><br>
-				<input type="password" id="password" name="password" required><br><br>
+				<label for="mail">E-mail:</label><br>
+				<input type="text" id="re" name="mail" required><br>
+				<label for="password">Hasło:</label><br>
+				<input type="password" id="rp" name="password" required><br>
+				<label for="password">Powtórz hasło:</label><br>
+				<input type="password" id="rrp" name="password" required><br><br>
 				<label for="regulamin">Akceptuję regulamin</label>
 				<input type="checkbox" id="regulamin" name="regulamin" required><br><br>
 				<label for="robot">Nie jestem robotem</label>
 				<input type="checkbox" id="robot" name="robot" required><br><br>
-				<button type="submit" id="submit">Zarejestruj</button><br><br>
+				<button type="submit"onclick="register(); location.href=`./login.html`">Zarejestruj</button><br><br>
 			</form>
 		</div>
 		</div>

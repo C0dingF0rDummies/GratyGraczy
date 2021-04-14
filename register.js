@@ -32,6 +32,7 @@ function register() {
         document.getElementById("rrp").value = "";
         document.getElementById("sname").value = "";
         document.getElementById("fname").value = "";
+        window.location.assign("./login.html");
     }
 }
 function login() {

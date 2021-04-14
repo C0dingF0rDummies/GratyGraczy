@@ -50,10 +50,6 @@
 	let stan = localStorage.getItem("stan")
 	let nazwa = localStorage.getItem("nazwa")
 	if (stan == 1) {
-		var pct = document.createElement("IMG");
-		pct.src = "./ikona-konto.png";
-		var src = document.getElementById("pct");
-		src.appendChild(pct);
 		var btn = document.createElement("BUTTON");
 		btn.innerHTML = "Wyloguj";
 		btn.className = "profil";
@@ -64,6 +60,10 @@
 		var t = document.createTextNode("Witaj "+nazwa); 
 		h.appendChild(t); 
 		document.body.appendChild(h);    
+		var pct = document.createElement("img");
+		pct.src = "./ikona-konto.png";
+		var src = document.getElementById("pct");
+		src.appendChild(pct);
 	}
 	else {
 		localStorage.setItem("stan", 0)

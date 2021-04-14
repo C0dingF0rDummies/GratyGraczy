@@ -50,16 +50,20 @@
 	let stan = localStorage.getItem("stan")
 	let nazwa = localStorage.getItem("nazwa")
 	if (stan == 1) {
-		var h = document.createElement("P")
-		h.className = "loginklient";
-		var t = document.createTextNode("Witaj "+nazwa); 
-		h.appendChild(t); 
-		document.body.appendChild(h);    
+		var pct = document.createElement("IMG");
+		pct.src = "./ikona-konto.png";
+		var src = document.getElementById("pct");
+		src.appendChild(pct);
 		var btn = document.createElement("BUTTON");
 		btn.innerHTML = "Wyloguj";
 		btn.className = "profil";
 		btn.onclick = function(){wyloguj()}
 		document.body.appendChild(btn);
+		var h = document.createElement("P")
+		h.className = "loginklient";
+		var t = document.createTextNode("Witaj "+nazwa); 
+		h.appendChild(t); 
+		document.body.appendChild(h);    
 	}
 	else {
 		localStorage.setItem("stan", 0)
@@ -81,8 +85,7 @@
 </script>
 
 <body>
-	<div class="h1">
-		<h1>Graty Graczy</h1>
+
 	<nav>
 		<div class='ripple-background'>
 			<div class='circle xxlarge shade1'></div>

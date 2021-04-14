@@ -12,14 +12,6 @@ img {
     float: left;
 }
 
-h1 {
-    text-align: center;
-    font: white;
-    font-size: 350%;
-    float: left;
-    margin-top: 3%;
-}
-
 .guziki {
     background-color: #6a93cb;
     background-image: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);
@@ -167,6 +159,29 @@ footer {
     color: #444;
     margin: 20px auto;
     overflow: hidden;
+}
+
+
+#pczas {
+    border-style: solid;
+    border-radius: 25px;
+    margin-bottom: 10%;
+    background-image: linear-gradient(to right, #ff0000, #ff003f, #ff006c, #ff0098, #ea00c2, #b85beb, #757eff, #0094ff, #00baff, #00d9fe, #00f0b6, #00ff4d);
+}
+
+.profil {
+    margin-left: 10px;
+    float: right;
+    font-size: 100%;
+}
+
+.loginklient{
+    margin-left: 10px;
+    text-align: right;
+    font-size: 100%;
+    color: black;
+    margin-top: 0%;
+    margin-bottom: 0%;
 }
 
 audio {
@@ -520,25 +535,4 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
     100% {
         transform: scale(0.8);
     }
-}
-
-#pczas {
-    border-style: solid;
-    border-radius: 25px;
-    margin-bottom: 10%;
-    background-image: linear-gradient(to right, #ff0000, #ff003f, #ff006c, #ff0098, #ea00c2, #b85beb, #757eff, #0094ff, #00baff, #00d9fe, #00f0b6, #00ff4d);
-}
-
-.profil {
-    margin-left: 10px;
-    float: right;
-    font-size: 100%;
-    background-color: green;
-}
-
-.loginklient{
-    margin-left: 10px;
-    text-align: right;
-    font-size: 100%;
-    color: black;
 }

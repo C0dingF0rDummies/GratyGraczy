@@ -31,12 +31,10 @@ h1 {
     display: inline-block;
     margin-left: 5%;
     font-size: 140%;
-    text-align: left;
-    float: left;
     cursor: pointer;
 }
 
-.przyciski{
+.przyciski {
     margin-left: 5%;
 }
 
@@ -69,7 +67,8 @@ h1 {
     font-size: 75%;
     background: transparent;
 }
-.button:hover{
+
+.button:hover {
     background-color: #01ffd5;
 }
 
@@ -97,7 +96,7 @@ main {
     padding-right: 2%;
     text-align: center;
     border-radius: 25px;
-    border-style:solid;
+    border-style: solid;
     opacity: 0.97;
     float: right;
 }
@@ -163,7 +162,7 @@ footer {
     height: auto;
     padding: 20px;
     border-radius: 5px;
-    border-style:solid;
+    border-style: solid;
     background-color: #eee;
     color: #444;
     margin: 20px auto;
@@ -440,7 +439,7 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
     background-color: rgba(232, 234, 237, 1);
     text-align: center;
     border-radius: 25px;
-    border-style:solid;
+    border-style: solid;
     opacity: 0.97;
 }
 
@@ -523,10 +522,23 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
     }
 }
 
-#pczas
-{
-	border-style:solid;
-	border-radius:25px;
-	margin-bottom:10%;
-	 background-image: linear-gradient(to right, #ff0000, #ff003f, #ff006c, #ff0098, #ea00c2, #b85beb, #757eff, #0094ff, #00baff, #00d9fe, #00f0b6, #00ff4d);
+#pczas {
+    border-style: solid;
+    border-radius: 25px;
+    margin-bottom: 10%;
+    background-image: linear-gradient(to right, #ff0000, #ff003f, #ff006c, #ff0098, #ea00c2, #b85beb, #757eff, #0094ff, #00baff, #00d9fe, #00f0b6, #00ff4d);
+}
+
+.profil {
+    margin-left: 10px;
+    float: right;
+    font-size: 100%;
+    background-color: green;
+}
+
+.loginklienta{
+    margin-left: 10px;
+    text-align: right;
+    font-size: 100%;
+    color: hotpink;
 }

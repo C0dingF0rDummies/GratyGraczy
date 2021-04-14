@@ -188,7 +188,7 @@ let product = [
 },
 	{
 	Nazwa: "Corsair Vengeance RGB Pro",
-	tag: "Corsair",
+	tag: "Corsair1",
 	Cena: 529,
 	wKarcie: 0
 },
@@ -309,91 +309,103 @@ let product = [
 	{
 	Nazwa: "ASUS ROG Gladius II Wireless",
 	tag: "ASUS2",
-	Cena: 3999,
+	Cena: 349,
 	wKarcie: 0
 },
 	{
-	Nazwa: "Nazwa: HP Pavilion Gaming",
-	tag: "HP3",
-	Cena: 3999,
+	Nazwa: "SPC Gear GK630K Tournament Kailh Brown RGB",
+	tag: "SPC1",
+	Cena: 249,
 	wKarcie: 0
 },
 	{
-	Nazwa: "Nazwa: HP Pavilion Gaming",
-	tag: "HP3",
-	Cena: 3999,
+	Nazwa: "Corsair K55 Gaming",
+	tag: "Corsair2",
+	Cena: 199,
 	wKarcie: 0
 },
 	{
-	Nazwa: "Nazwa: HP Pavilion Gaming",
-	tag: "HP3",
-	Cena: 3999,
+	Nazwa: "SPC Gear GK630K Onyx White Tournament Kailh Brown RGB",
+	tag: "SCP2",
+	Cena: 299,
 	wKarcie: 0
 },
 	{
-	Nazwa: "Nazwa: HP Pavilion Gaming",
-	tag: "HP3",
-	Cena: 3999,
+	Nazwa: "SteelSeries Apex PRO TKL OmniPoint",
+	tag: "SteelSeries4",
+	Cena: 929,
 	wKarcie: 0
 },
 	{
-	Nazwa: "Nazwa: HP Pavilion Gaming",
-	tag: "HP3",
-	Cena: 3999,
+	Nazwa: "Corsair MM300 Gaming (Extended)",
+	tag: "Corsair3",
+	Cena: 134,
 	wKarcie: 0
 },
 	{
-	Nazwa: "Nazwa: HP Pavilion Gaming",
-	tag: "HP3",
-	Cena: 3999,
+	Nazwa: "Redragon LIBRA",
+	tag: "Redragon",
+	Cena: 39,
 	wKarcie: 0
 },
 	{
-	Nazwa: "Nazwa: HP Pavilion Gaming",
-	tag: "HP3",
-	Cena: 3999,
+	Nazwa: "SteelSeries QcK",
+	tag: "SteelSeries5",
+	Cena: 50,
 	wKarcie: 0
 },
 	{
-	Nazwa: "Nazwa: HP Pavilion Gaming",
-	tag: "HP3",
-	Cena: 3999,
+	Nazwa: "MSI AGILITY GD60",
+	tag: "MSI4",
+	Cena: 179,
 	wKarcie: 0
 },
 	{
-	Nazwa: "Nazwa: HP Pavilion Gaming",
-	tag: "HP3",
-	Cena: 3999,
+	Nazwa: "SanDisk 64GB iXpand iPhone/iPad (USB 3.0+Lightning)",
+	tag: "SanDisk1",
+	Cena: 249,
 	wKarcie: 0
 },
 	{
-	Nazwa: "Nazwa: HP Pavilion Gaming",
-	tag: "HP3",
-	Cena: 3999,
+	Nazwa: "SanDisk 64GB Ultra Luxe 150MB/s USB 3.1",
+	tag: "SanDisk2",
+	Cena: 43,
 	wKarcie: 0
 },
 	{
-	Nazwa: "Nazwa: HP Pavilion Gaming",
-	tag: "HP3",
-	Cena: 3999,
+	Nazwa: "SanDisk 16GB Ultra Flair (USB 3.0)",
+	tag: "SanDisk3",
+	Cena: 25,
 	wKarcie: 0
 },
 	{
-	Nazwa: "Nazwa: HP Pavilion Gaming",
-	tag: "HP3",
-	Cena: 3999,
+	Nazwa: "SanDisk 128GB Ultra Loop 130MB/s USB 3.0",
+	tag: "SanDisk4",
+	Cena: 82,
 	wKarcie: 0
 },
 	{
-	Nazwa: "Nazwa: HP Pavilion Gaming",
-	tag: "HP3",
-	Cena: 3999,
+	Nazwa: "Silver Monkey Kabel HDMI 2.0 - HDMI 1,5m",
+	tag: "Silver1",
+	Cena: 16,
 	wKarcie: 0
 },
 	{
-	Nazwa: "Nazwa: HP Pavilion Gaming",
-	tag: "HP3",
-	Cena: 3999,
+	Nazwa: "Silver Monkey Kabel USB 2.0 - micro USB 2m",
+	tag: "Silver2",
+	Cena: 15,
+	wKarcie: 0
+},
+	{
+	Nazwa: "Silver Monkey Kabel SCHUKO - C13 3m",
+	tag: "Silver3",
+	Cena: 18,
+	wKarcie: 0
+},
+	{
+	Nazwa: "Unitek Kabel Jack 3.5mm - Jack 3.5mm 1,5m",
+	tag: "Unitek",
+	Cena: 20,
 	wKarcie: 0
 },
 	

@@ -50,16 +50,20 @@
 	let stan = localStorage.getItem("stan")
 	let nazwa = localStorage.getItem("nazwa")
 	if (stan == 1) {
-		var h = document.createElement("P")
-		h.className = "loginklient";
-		var t = document.createTextNode("Witaj "+nazwa); 
-		h.appendChild(t); 
-		document.body.appendChild(h);    
+		var pct = document.createElement("IMG");
+		pct.src = "./ikona-konto.png";
+		var src = document.getElementById("pct");
+		src.appendChild(pct);
 		var btn = document.createElement("BUTTON");
 		btn.innerHTML = "Wyloguj";
 		btn.className = "profil";
 		btn.onclick = function(){wyloguj()}
 		document.body.appendChild(btn);
+		var h = document.createElement("P")
+		h.className = "loginklient";
+		var t = document.createTextNode("Witaj "+nazwa); 
+		h.appendChild(t); 
+		document.body.appendChild(h);    
 	}
 	else {
 		localStorage.setItem("stan", 0)
@@ -81,8 +85,7 @@
 </script>
 
 <body>
-	<div class="h1">
-		<h1>Graty Graczy</h1>
+
 	<nav>
 		<div class='ripple-background'>
 			<div class='circle xxlarge shade1'></div>
@@ -156,7 +159,7 @@
 			<img src="./laptop_nowy.png" alt="laptop omen"></img>
 			<div class="nazwa">Laptop OMEN</p>
 				<div class="cena"><s>4300zł</s> </p>
-					<div class="cena">3400zł</p>
+					<div class="cena">3400zł </p>
 						<div class="czas">Pozostały Czas:</p>
 							<div id="pczas">
 								</p>
@@ -273,7 +276,7 @@
 	</main>
 
 	<footer>
-		Stronę stworzyli: Mateusz Wyrzykowski, Michał Szymczyk, Kamil Gerek
+		Strone stworzył: Mateusz Wyrzykowski, Michał Szymczyk, Kamil Gerek
 	</footer>
 </body>
 

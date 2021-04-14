@@ -100,7 +100,7 @@ h1 {
   padding-right: 2%;
   text-align: left;
   border-radius: 25px;
-  border-style: solid;
+  border-style:solid;
   opacity: 0.97;
 }
 
@@ -113,10 +113,6 @@ img {
 
 .cena {
   text-align: right;
-}
-
-button:hover {
-  cursor: pointer;
 }
 
 button {
@@ -139,29 +135,44 @@ footer {
   text-align: right;
 }
 
-.menu {
-  margin-top: 3%;
-  margin-left: 1%;
-  background: linear-gradient(to bottom, #3399ff 8%, #ffffff 91%);
-  padding-right: 8%;
-  border-radius: 25px;
-  border-style: solid;
-  opacity: 0.97;
-  float: left;
-  clear: left;
+.menu
+{
+	margin-top:3%;
+	margin-left:1%;
+	background: linear-gradient(to bottom, #3399ff 8%, #ffffff 91%);
+	padding-right:8%;
+	border-radius: 25px;
+	border-style:solid;
+	opacity: 0.97;
+	float:left;
+	clear:left;	
 }
 
-a:link {
-  color: black;
-  text-decoration: none;
+a:link{
+	color:black;
+	text-decoration:none;
 }
 
-a:visited {
-  color: black;
-  text-decoration: none;
+a:visited{
+	color:black;
+	text-decoration:none;
 }
 
-a:hover {
-  color: purple;
-  text-decoration: none;
+a:hover{
+	color:purple;
+	text-decoration:none;
+}
+
+.cart
+{	
+margin:5px;
+
+text-align:right;
+}
+
+b
+{
+	background-color:lightblue;
+	padding:3px;
+	margin:3px;
 }

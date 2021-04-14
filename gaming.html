@@ -2,18 +2,10 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-	<meta name="description" content="Sklep internetowy" />
-	<meta name="keywords" content="sklep internetowy graty graczy" />
-	<meta name="author" content="Mateusz Wyrzykowski, MichaĹ Szymczyk, Kamil Gerek">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
-	<meta http-equiv="Content-Language" content="pl" />
   <link rel="shortcut icon" href="./Logo_Strony_tlo.png" type="image/x-icon">
   <link rel="stylesheet" href="./podstrony.css" type="text/css" />
   <title>Laptopy Gamingowe</title>
 </head>
-
 <body>
   <div class='ripple-background'>
     <div class='circle xxlarge shade1'></div>
@@ -26,6 +18,13 @@
     <div class="h1">
       <h1>Laptopy Gamingowe</h1>
     </div>
+	<section class="koszyk">
+	<ul class="cart">
+	<li class="cart">
+	<a href="koszyk.html"><b>Koszyk</b><span>0</span></a>
+	</li>
+	</ul>
+	</section>
     <section class="menu">
       <ul>
          <li><a href="projektHTML.html">Strona Główna</a></li>
@@ -52,56 +51,58 @@
     <ol>
       <li class="li1">
         <img src="./Laptop1.png" alt="Laptop1"></img>
-        Nazwa: HP Pavilion Gaming
-        <div class="cena">
+        <div id="nazwa1" id="1">Nazwa: HP Pavilion Gaming</div>
+        <div class="cena" id="cena1">
           Cena: 3699,00 zł
         </div>
         Główne informacje:<br>
         -Procesor: Intel Core i5-10300H<br>
         -Grafika: NVIDIA GeForce GTX 1650Ti<br>
         -Pamięć: 16GB
-        <button>Do Koszyka</button>
+        <button class="add-cart cart1" href="#">Do Koszyka</button>
       </li>
       <li class="li1">
         <img src="./Laptop2.png" alt="Laptop2"></img>
-        Nazwa: Lenovo Legion 5-15
-        <div class="cena">
+        <div id="nazwa2">Nazwa: Lenovo Legion 5-15</div>
+        <div class="cena" id="cena2">
           Cena: 4299,00 zł
         </div>
         Główne informacje:<br>
         -Procesor: Intel Core i5-10300H<br>
         -Grafika: NVIDIA GeForce GTX 1650Ti<br>
         -Pamięć: 16GB
-        <button>Do Koszyka</button>
+        <button class="add-cart cart2" href="#">Do Koszyka</button>
       </li>
       <li class="li1">
         <img src="./Laptop3.png" alt="Laptop3"></img>
-        Nazwa: HP Pavilion Gaming
-        <div class="cena">
+        <div id="nazwa3">Nazwa: HP Pavilion Gaming</div>
+        <div class="cena" id="cena3">
           Cena: 4299,00 zł
         </div>
         Główne informacje:<br>
         -Procesor: Dell Inspiron G3<br>
         -Grafika: NVIDIA GeForce RTX 2060<br>
         -Pamięć: 8GB
-        <button>Do Koszyka</button>
+        <button class="add-cart cart3" href="#">Do Koszyka</button>
       </li>
       <li class="li1">
         <img src="./Laptop5.png" alt="Laptop4"></img>
-        Nazwa: Dell Inspiron G3
-        <div class="cena">
+        <div id="nazwa4">Nazwa: Dell Inspiron G3</div>
+        <div class="cena" id="cena4">
           Cena: 4099,00 zł
         </div>
         Główne informacje:<br>
         -Procesor: Intel Core i5-10300H<br>
         -Grafika: NVIDIA GeForce GTX 1650Ti<br>
         -Pamięć: 16GB
-        <button>Do Koszyka</button>
+        <button class="add-cart cart4" href="#">Do Koszyka</button>
       </li>
     </ol>
   </main>
   <footer>
     Strone stowrzył: Mateusz Wyrzykowski, Michał Szymczyk, Kamil Gerek
   </footer>
+  <script src="koszykskryptgaming.js">
+  </script>
 </body>
 </html>

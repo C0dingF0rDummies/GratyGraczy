@@ -1,133 +1,234 @@
 let karta = document.querySelectorAll('.add-cart');
-let product = [
+let produkt = [
 {
-	Nazwa: "HP Pavilion Gaming",
-	tag: "HP1",
+	Nazwa: "HP Pavilion Gaming i7",
+	tag: "HP Pavilion Gaming i7",
 	Cena: 3699,
 	wKarcie: 0
 },
 {
 	Nazwa: "Lenovo Legion 5-15",
-	tag: "Lenovo1",
+	tag: "Lenovo Legion 5-15",
 	Cena: 4299,
 	wKarcie: 0
 },
 {
-	Nazwa: "HP Pavilion Gaming",
-	tag: "HP2",
+	Nazwa: "HP Pavilion Gaming i5",
+	tag: "HP Pavilion Gaming i5",
 	Cena: 4299,
 	wKarcie: 0
 },
 {
 	Nazwa: "Dell Inspiron G3",
-	tag: "Dell1",
+	tag: "Dell Inspiron G3",
 	Cena: 4099,
 	wKarcie: 0
 }
-];
-		for (let i=0; i<karta.length; i++)
+];		
+for(let i=0; i< karta.length; i++) {
+    karta[i].addEventListener('click', () => {
+        KartaNumer(produkt[i]);
+        CalkowityKoszt(produkt[i]);
+    });
+}
+
+function NumerKoszykaRefresh() {
+    let NumerProduktu = localStorage.getItem('KartaNumer');
+    if( NumerProduktu ) {
+        var element = document.querySelector(".cart span")
+		if(element)
 		{
-		karta[i].addEventListener('click',() => {
-			NumerKoszyk(product[i])
-			CalkowityKoszt(product[i])
-		})
-		}
-		function NumerKoszykRefresh()
+        element.textContent = NumerProduktu;
+    }
+}
+}
+
+function KartaNumer(produkt, action) {
+    let NumerProduktu = localStorage.getItem('KartaNumer');
+    NumerProduktu = parseInt(NumerProduktu);
+
+    let KartaPrzedmiot = localStorage.getItem('produktWkarcie');
+    KartaPrzedmiot = JSON.parse(KartaPrzedmiot);
+
+    if( action ) {
+        localStorage.setItem("KartaNumer", NumerProduktu - 1);
+		var element = document.querySelector(".cart span")
+		if(element)
 		{
-			let numerProduktu = localStorage.getItem("NumerKoszyk");
-			if(numerProduktu)
-			{
-				var element = document.querySelector(".cart span")
-				if (element) {
-					element.textContent=numerProduktu
-                }
-				//document.querySelector(".cart span").textContent=numerProduktu;
-			}
-		}
-		
-		function NumerKoszyk(product)
+        element.textContent = NumerProduktu - 1;
+        console.log("action running");
+
+    }
+    } else if( NumerProduktu ) {
+        localStorage.setItem("KartaNumer", NumerProduktu + 1);
+		var element = document.querySelector(".cart span")
+		if(element)
 		{
-			let numerProduktu = localStorage.getItem("NumerKoszyk");
-			numerProduktu=parseInt(numerProduktu);
-			if(numerProduktu)
-			{
-				localStorage.setItem("NumerKoszyk" ,numerProduktu + 1);
-				document.querySelector(".cart span").textContent=numerProduktu+1;
-			}
-			else
-			{
-				localStorage.setItem("NumerKoszyk" ,1);
-				document.querySelector(".cart span").textContent=1;
-			}
-			DoKoszyka(product);
-		}
-		
-		function DoKoszyka(product)
-		{	
-			let ProduktyKarty = localStorage.getItem("produktWkarcie");
-			ProduktyKarty = JSON.parse(ProduktyKarty);
-			if(ProduktyKarty != null)
-			{
-				if(ProduktyKarty[product.tag] == undefined)
-				{
-					ProduktyKarty={
-						...ProduktyKarty,
-						[product.tag]: product
-					}
-				}
-				ProduktyKarty[product.tag].wKarcie+=1;
-			}
-			else
-			{
-			product.wKarcie=1;
-			ProduktyKarty={
-			[product.tag]: product
-			}
-			}
-			localStorage.setItem("produktWkarcie", JSON.stringify(ProduktyKarty));
-		}
-		
-		function CalkowityKoszt(product)
+        element.textContent = NumerProduktu + 1;
+    } 
+    } else {
+        localStorage.setItem("KartaNumer", 1);
+        var element = document.querySelector(".cart span")
+		if(element)
 		{
-			let KoszykCena = localStorage.getItem("CalkowityKoszt");
-			console.log("Cena koszyka to: ", KoszykCena);
-			console.log(typeof KoszykCena);
-			if(KoszykCena != null)
-			{
-				KoszykCena= parseInt(KoszykCena);
-				localStorage.setItem("CalkowityKoszt", KoszykCena+product.Cena);
-			}
-			else
-			{
-				localStorage.setItem("CalkowityKoszt", product.Cena);
-			}
+        element.textContent = 1;
+    } 
+    }
+    setItems(produkt);
+}
+
+function setItems(produkt) {
+    // let NumerProduktu = localStorage.getItem('KartaNumer');
+    // NumerProduktu = parseInt(NumerProduktu);
+    let KartaPrzedmiot = localStorage.getItem('produktWkarcie');
+    KartaPrzedmiot = JSON.parse(KartaPrzedmiot);
+
+    if(KartaPrzedmiot != null) {
+        let ObecnyProdukt = produkt.tag;
+    
+        if( KartaPrzedmiot[ObecnyProdukt] == undefined ) {
+            KartaPrzedmiot = {
+                ...KartaPrzedmiot,
+                [ObecnyProdukt]: produkt
+            }
+        } 
+        KartaPrzedmiot[ObecnyProdukt].wKarcie += 1;
+
+    } else {
+        produkt.wKarcie = 1;
+        KartaPrzedmiot = { 
+            [produkt.tag]: produkt
+        };
+    }
+
+    localStorage.setItem('produktWkarcie', JSON.stringify(KartaPrzedmiot));
+}
+
+function CalkowityKoszt( produkt, action ) {
+    let koszyk = localStorage.getItem("CalkowityKoszt");
+
+    if( action) {
+        koszyk = parseInt(koszyk);
+
+        localStorage.setItem("CalkowityKoszt", koszyk - produkt.Cena);
+    } else if(koszyk != null) {
+        
+        koszyk = parseInt(koszyk);
+        localStorage.setItem("CalkowityKoszt", koszyk + produkt.Cena);
+    
+    } else {
+        localStorage.setItem("CalkowityKoszt", produkt.Cena);
+    }
+}
+
+function Koszyk() {
+    let KartaPrzedmiot = localStorage.getItem('produktWkarcie');
+    KartaPrzedmiot = JSON.parse(KartaPrzedmiot);
+
+    let koszyk = localStorage.getItem("CalkowityKoszt");
+    koszyk = parseInt(koszyk);
+
+    let productContainer = document.querySelector('.produkty');
+    
+    if( KartaPrzedmiot && productContainer ) {
+        productContainer.innerHTML = '';
+        Object.values(KartaPrzedmiot).map( (item, index) => {
+            productContainer.innerHTML += 
+            `<div class="produkty"><ion-icon name="close-circle"></ion-icon><img src="./${item.tag}.png"></img>
+                <span>${item.Nazwa}</span>
+            </div>
+            <div class="cena">$${item.Cena},00</div>
+            <div class="ilosc">
+                <ion-icon class="decrease " name="arrow-dropleft-circle"></ion-icon>
+                    <span>${item.wKarcie}</span>
+                <ion-icon class="increase" name="arrow-dropright-circle"></ion-icon>   
+            </div>
+            <div class="razem">$${item.wKarcie * item.Cena},00</div>`;
+        });
+
+        productContainer.innerHTML += `
+            <div class="basketTotalContainer">
+                <h4 class="basketTotalTitle">Basket Total</h4>
+                <h4 class="basketTotal">$${koszyk},00</h4>
+            </div>`
+
+		UsuwaniezKoszyka();
+        ZmianaIlosci();
+    }
+}
+
+function ZmianaIlosci() {
+    let decreaseButtons = document.querySelectorAll('.decrease');
+    let increaseButtons = document.querySelectorAll('.increase');
+    let ObecnieIlosc = 0;
+    let ObecnyProdukt = '';
+    let KartaPrzedmiot = localStorage.getItem('produktWkarcie');
+    KartaPrzedmiot = JSON.parse(KartaPrzedmiot);
+
+    for(let i=0; i < increase.length; i++) {
+        decrease[i].addEventListener('click', () => {
+            console.log(KartaPrzedmiot);
+            ObecnieIlosc = decrease[i].parentElement.querySelector('span').textContent;
+            console.log(ObecnieIlosc);
+			console.log('span');
+            ObecnyProdukt = decrease[i].parentElement.previousElementSibling.previousElementSibling.querySelector('span').textContent;
+            console.log(ObecnyProdukt);
+
+            if( KartaPrzedmiot[ObecnyProdukt].wKarcie > 1 ) {
+                KartaPrzedmiot[ObecnyProdukt].wKarcie -= 1;
+                KartaNumer(KartaPrzedmiot[ObecnyProdukt], "decrease");
+                CalkowityKoszt(KartaPrzedmiot[ObecnyProdukt], "decrease");
+                localStorage.setItem('produktWkarcie', JSON.stringify(KartaPrzedmiot));
+                Koszyk();
+            }
+        });
+
+        increase[i].addEventListener('click', () => {
+            console.log(KartaPrzedmiot);
+            ObecnieIlosc = increase[i].parentElement.querySelector('span').textContent;
+            console.log(ObecnieIlosc);
+            ObecnyProdukt = increase[i].parentElement.previousElementSibling.previousElementSibling.querySelector('span').textContent;
+            console.log(ObecnyProdukt);
+
+            KartaPrzedmiot[ObecnyProdukt].wKarcie += 1;
+            KartaNumer(KartaPrzedmiot[ObecnyProdukt]);
+            CalkowityKoszt(KartaPrzedmiot[ObecnyProdukt]);
+            localStorage.setItem('produktWkarcie', JSON.stringify(KartaPrzedmiot));
+            Koszyk();
+        });
+    }
+}
+
+function UsuwaniezKoszyka() {
+    let usuwanie = document.querySelectorAll('.produkty ion-icon');
+    let NumerProduktu = localStorage.getItem('KartaNumer');
+    let KosztKoszyka = localStorage.getItem("CalkowityKoszt");
+    let KartaPrzedmiot = localStorage.getItem('produktWkarcie');
+    KartaPrzedmiot = JSON.parse(KartaPrzedmiot);
+    let NazwaProduktu;
+    console.log(KartaPrzedmiot);
+
+    for(let i=0; i < usuwanie.length; i++) {
+        usuwanie[i].addEventListener('click', () => {
+            NazwaProduktu = usuwanie[i].parentElement.textContent;
+			if( KartaPrzedmiot[NazwaProduktu] == undefined ) {
+            KartaPrzedmiot = {
+                ...KartaPrzedmiot,
+                [NazwaProduktu]: produkt
+            }
+        } 
 			
-		}
-		
-		function Karta()
-		{
-			let KartaProdukty = localStorage.getItem("produktWkarcie");
-			KartaProdukty= JSON.parse(KartaProdukty);
-			let ProduktKoszyk = document.querySelector(".produkty");
-			console.log(KartaProdukty);
-			if(KartaProdukty && ProduktKoszyk)
-			{
-				ProduktKoszyk.innerHTML = "";
-				Object.values(KartaProdukty).map(item => {
-				ProduktKoszyk.innerHTML+=
-				`<div class="produkty">
-				<span class="na">${item.Nazwa}</span>
+            localStorage.setItem('KartaNumer', NumerProduktu - KartaPrzedmiot[NazwaProduktu].wKarcie);
+            localStorage.setItem('CalkowityKoszt', KosztKoszyka - ( KartaPrzedmiot[NazwaProduktu].Cena * KartaPrzedmiot[NazwaProduktu].wKarcie));
 
-				<span class="ce">${item.Cena},00</span>
+            delete KartaPrzedmiot[NazwaProduktu];
+            localStorage.setItem('produktWkarcie', JSON.stringify(KartaPrzedmiot));
 
-				<input type="number" value="${item.wKarcie}" class="il">
+            Koszyk();
+            NumerKoszykaRefresh();
+        })
+    }
+}
 
-				<span class="prawo">${item.Cena*item.wKarcie},00</span>
-				</div>
-				`
-				
-				});
-			}
-		}
-		NumerKoszykRefresh();
-		Karta();
+NumerKoszykaRefresh();
+Koszyk();

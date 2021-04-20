@@ -53,35 +53,46 @@
 		var btn = document.createElement("BUTTON");
 		btn.innerHTML = "Wyloguj";
 		btn.className = "profil";
-		btn.onclick = function(){wyloguj()}
+		btn.onclick = function () { wyloguj() }
 		document.body.appendChild(btn);
-		var h = document.createElement("P")
-		h.className = "loginklient";
-		var t = document.createTextNode("Witaj "+nazwa); 
-		h.appendChild(t); 
-		document.body.appendChild(h);    
+		var btn = document.createElement("BUTTON");
+		btn.innerHTML = ("Witaj " + nazwa);
+		btn.className = "profil";
+		btn.title ="Koszyk";
+		btn.onclick = function () { teleportKoszyk() }
+		document.body.appendChild(btn);
 	}
 	else {
 		localStorage.setItem("stan", 0)
 	}
 	if (stan == 0) {
 		var btn = document.createElement("BUTTON");
+		btn.innerHTML = "Zaloguj";
+		btn.className = "profil";
+		btn.onclick = function () { teleportLogowania() }
+		document.body.appendChild(btn);
+		var btn = document.createElement("BUTTON");
 		btn.innerHTML = "Rejestracja";
 		btn.className = "profil";
-		btn.onclick = function(){teleport()}
+		btn.onclick = function () { teleportRejestracji() }
 		document.body.appendChild(btn);
 	}
-	function teleport(){
+	function teleportRejestracji() {
 		window.location.assign("./register.html")
 	}
-	function wyloguj(){
+	function teleportLogowania() {
+		window.location.assign("./login.html")
+	}
+	function teleportKoszyk() {
+		window.location.assign("./koszyk.html")
+	}
+	function wyloguj() {
 		localStorage.setItem("stan", 0)
 		window.location.assign("./projektHTML.html")
 	}
 </script>
 
 <body>
-
 	<nav>
 		<div class='ripple-background'>
 			<div class='circle xxlarge shade1'></div>

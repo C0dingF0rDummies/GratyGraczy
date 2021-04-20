@@ -210,7 +210,14 @@ img
 	font-size:150%;
 	float:left;
 }
-
+.mniej:hover
+{
+	cursor:pointer;s
+}
+.wiecej:hover
+{
+	cursor:pointer;
+}
 .test
 {
 	margin-top:3px;

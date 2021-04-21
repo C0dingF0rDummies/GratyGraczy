@@ -49,15 +49,15 @@
 		let stan = localStorage.getItem("stan")
 		let nazwa = localStorage.getItem("nazwa")
 		if (stan == 1) {
-			var btn = document.createElement("BUTTON");
-			btn.innerHTML = "Wyloguj";
-			btn.className = "profil";
+			var btn = document.createElement("BUTTON")
+			btn.innerHTML = "Wyloguj"
+			btn.className = "profil"
 			btn.onclick = function () { wyloguj() }
 			document.body.appendChild(btn);
-			var btn = document.createElement("BUTTON");
+			var btn = document.createElement("BUTTON")
 			btn.innerHTML = ("Witaj " + nazwa);
-			btn.className = "profil";
-			btn.title = "Koszyk";
+			btn.className = "profil"
+			btn.title = "Koszyk"
 			btn.onclick = function () { teleportKoszyk() }
 			document.body.appendChild(btn);
 		}
@@ -65,14 +65,14 @@
 			localStorage.setItem("stan", 0)
 		}
 		if (stan == 0) {
-			var btn = document.createElement("BUTTON");
-			btn.innerHTML = "Zaloguj";
-			btn.className = "profil";
+			var btn = document.createElement("BUTTON")
+			btn.innerHTML = "Zaloguj"
+			btn.className = "profil"
 			btn.onclick = function () { teleportLogowania() }
 			document.body.appendChild(btn);
-			var btn = document.createElement("BUTTON");
-			btn.innerHTML = "Rejestracja";
-			btn.className = "profil";
+			var btn = document.createElement("BUTTON")
+			btn.innerHTML = "Rejestracja"
+			btn.className = "profil"
 			btn.onclick = function () { teleportRejestracji() }
 			document.body.appendChild(btn);
 		}

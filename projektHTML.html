@@ -15,83 +15,6 @@
 	<script defer src="./register.js"></script>
 	<title>Graty Graczy</title>
 </head>
-<script>
-	function czasDoWydarzenia(rok, miesiac, dzien, godzina, minuta, sekunda, milisekunda) {
-		var aktualnyCzas = new Date();
-		var dataWydarzenia = new Date(rok, miesiac, dzien, godzina, minuta, sekunda, milisekunda);
-		var pozostalyCzas = dataWydarzenia.getTime() - aktualnyCzas.getTime();
-		if (pozostalyCzas > 0) {
-			var s = pozostalyCzas / 1000;	// sekundy
-			var min = s / 60;				// minuty
-			var h = min / 60;				// godziny
-			var dni = h / 24;   			// dni
-
-			var sLeft = Math.floor(s % 60);	// pozostało sekund		
-			var minLeft = Math.floor(min % 60);	// pozostało minut
-			var hLeft = Math.floor(h % 24);		// pozostało godzin
-			var dniLeft = Math.floor(dni);		// pozostało dni
-
-			if (minLeft < 10)
-				minLeft = "0" + minLeft;
-			if (sLeft < 10)
-				sLeft = "0" + sLeft;
-
-			return dniLeft + "dni : " + hLeft + "h : " + minLeft + "min : " + sLeft + "s";
-		}
-		else
-			return "Zdarzenie miało już miejsce na naszym globie, to już jest historia i już nie powróci!";
-	}
-
-	window.onload = function () {
-		idElement = "pczas";
-		document.getElementById(idElement).innerHTML = czasDoWydarzenia(2021, 5, 01, 20, 0, 0, 0); // 0->styczeń
-		setInterval("document.getElementById(idElement).innerHTML = czasDoWydarzenia(2021, 06, 01, 20, 0, 0, 0)", 1000);
-	};
-	let stan = localStorage.getItem("stan")
-	let nazwa = localStorage.getItem("nazwa")
-	if (stan == 1) {
-		var btn = document.createElement("BUTTON");
-		btn.innerHTML = "Wyloguj";
-		btn.className = "profil";
-		btn.onclick = function () { wyloguj() }
-		document.body.appendChild(btn);
-		var btn = document.createElement("BUTTON");
-		btn.innerHTML = ("Witaj " + nazwa);
-		btn.className = "profil";
-		btn.title ="Koszyk";
-		btn.onclick = function () { teleportKoszyk() }
-		document.body.appendChild(btn);
-	}
-	else {
-		localStorage.setItem("stan", 0)
-	}
-	if (stan == 0) {
-		var btn = document.createElement("BUTTON");
-		btn.innerHTML = "Zaloguj";
-		btn.className = "profil";
-		btn.onclick = function () { teleportLogowania() }
-		document.body.appendChild(btn);
-		var btn = document.createElement("BUTTON");
-		btn.innerHTML = "Rejestracja";
-		btn.className = "profil";
-		btn.onclick = function () { teleportRejestracji() }
-		document.body.appendChild(btn);
-	}
-	function teleportRejestracji() {
-		window.location.assign("./register.html")
-	}
-	function teleportLogowania() {
-		window.location.assign("./login.html")
-	}
-	function teleportKoszyk() {
-		window.location.assign("./koszyk.html")
-	}
-	function wyloguj() {
-		localStorage.setItem("stan", 0)
-		window.location.assign("./projektHTML.html")
-	}
-</script>
-
 <body>
 	<nav>
 		<div class='ripple-background'>
@@ -285,6 +208,83 @@
 	<footer>
 		Strone stworzył: Mateusz Wyrzykowski, Michał Szymczyk, Kamil Gerek
 	</footer>
+<script>
+	function czasDoWydarzenia(rok, miesiac, dzien, godzina, minuta, sekunda, milisekunda) {
+		var aktualnyCzas = new Date();
+		var dataWydarzenia = new Date(rok, miesiac, dzien, godzina, minuta, sekunda, milisekunda);
+		var pozostalyCzas = dataWydarzenia.getTime() - aktualnyCzas.getTime();
+		if (pozostalyCzas > 0) {
+			var s = pozostalyCzas / 1000;	// sekundy
+			var min = s / 60;				// minuty
+			var h = min / 60;				// godziny
+			var dni = h / 24;   			// dni
+
+			var sLeft = Math.floor(s % 60);	// pozostało sekund		
+			var minLeft = Math.floor(min % 60);	// pozostało minut
+			var hLeft = Math.floor(h % 24);		// pozostało godzin
+			var dniLeft = Math.floor(dni);		// pozostało dni
+
+			if (minLeft < 10)
+				minLeft = "0" + minLeft;
+			if (sLeft < 10)
+				sLeft = "0" + sLeft;
+
+			return dniLeft + "dni : " + hLeft + "h : " + minLeft + "min : " + sLeft + "s";
+		}
+		else
+			return "Zdarzenie miało już miejsce na naszym globie, to już jest historia i już nie powróci!";
+	}
+
+	window.onload = function () {
+		idElement = "pczas";
+		document.getElementById(idElement).innerHTML = czasDoWydarzenia(2021, 5, 01, 20, 0, 0, 0); // 0->styczeń
+		setInterval("document.getElementById(idElement).innerHTML = czasDoWydarzenia(2021, 06, 01, 20, 0, 0, 0)", 1000);
+	};
+	let stan = localStorage.getItem("stan")
+	let nazwa = localStorage.getItem("nazwa")
+	if (stan == 1) {
+		var btn = document.createElement("BUTTON");
+		btn.innerHTML = "Wyloguj";
+		btn.className = "profil";
+		btn.onclick = function () { wyloguj() }
+		document.body.appendChild(btn);
+		var btn = document.createElement("BUTTON");
+		btn.innerHTML = ("Witaj " + nazwa);
+		btn.className = "profil";
+		btn.title ="Koszyk";
+		btn.onclick = function () { teleportKoszyk() }
+		document.body.appendChild(btn);
+	}
+	else {
+		localStorage.setItem("stan", 0)
+	}
+	if (stan == 0) {
+		var btn = document.createElement("BUTTON");
+		btn.innerHTML = "Zaloguj";
+		btn.className = "profil";
+		btn.onclick = function () { teleportLogowania() }
+		document.body.appendChild(btn);
+		var btn = document.createElement("BUTTON");
+		btn.innerHTML = "Rejestracja";
+		btn.className = "profil";
+		btn.onclick = function () { teleportRejestracji() }
+		document.body.appendChild(btn);
+	}
+	function teleportRejestracji() {
+		window.location.assign("./register.html")
+	}
+	function teleportLogowania() {
+		window.location.assign("./login.html")
+	}
+	function teleportKoszyk() {
+		window.location.assign("./koszyk.html")
+	}
+	function wyloguj() {
+		localStorage.setItem("stan", 0)
+		window.location.assign("./projektHTML.html")
+	}
+</script>
+
 </body>
 
 </html>

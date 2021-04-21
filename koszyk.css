@@ -99,7 +99,7 @@ nav
   margin-left: auto;
   margin-right:  auto;
   margin-top: 10%;
-  padding-bottom: 20%;
+  padding-bottom: 25%;
   padding-left: 2%;
   padding-right: 2%;
   text-align: center;
@@ -229,4 +229,19 @@ img
 {
 	margin-top:3px;
 	float:left;
+}
+
+.Adres
+{
+	text-align:left;
+}
+.miniformularz
+{
+	float:right;
+	text-align:right;
+}
+
+.button_wysylka
+{
+	
 }

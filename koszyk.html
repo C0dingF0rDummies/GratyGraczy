@@ -31,12 +31,44 @@
 		<div class="produkty">
 		
 		</div>
-		</div>
 		<div class="suma">
 		
 		</div>
+		<div class="miniformularz">
+		<label><b>Sposób płatności</b></label><br>
+		<select name="" id="platnosc">
+			<option value="Karta w sklepie">Karta w sklepie</option>
+			<option value="Karta przez internet">Karta przez internet</option>
+			<option value="Przelew">Przelew</option>
+			<option value="Gotówka w sklepie">Gotówka w sklepie</option>
+			<option value="Gotówka przez internet">Gotówka przez internet</option>
+		</select>
+		<br>
+		<label class="Adres"><b>Adres</b></label><br>
+		<label><b>Miasto</b></label>
+		<input type="text" id="miasto"><br>
+		<label><b>Ulica</b></label>
+		<input type="text" id="ulica"><br>
+		<label><b>Numer Domu</b></label>
+		<input type="text" id="nr_domu"><br>
+		<label><b>Numer Mieszkania</b></label>
+		<input type="text" id="nr_mieszkania"><br>
+		<button class="button_wysylka" onclick="wysylka()">Wyslij</button>
+		</div>
+		</div>
 	</main>
 <script src="koszykskrypt.js"></script>
+<script>
+function wysylka()
+{
+var platnosc=document.getElementById('platnosc').value;
+var miasto=document.getElementById('miasto').value;
+var ulica=document.getElementById('ulica').value;
+var nr_domu=document.getElementById('nr_domu').value;
+var nr_mieszkania=document.getElementById('nr_mieszkania').value;
+alert("Dziękujemy za zakupy w naszym sklepie wybrane produkty zostaną wysłane kurierem do Pana/Pani na adres: \n"+miasto+" "+ulica+" "+nr_domu+" "+nr_mieszkania+"\nPana/Pani sposób płatności będzie to: \n"+platnosc);
+}
+</script>
 <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </body>
 </html>

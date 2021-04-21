@@ -81,6 +81,17 @@ body {
     transform: scale(0.8);
   }
 }
+nav
+{
+	height:50px;
+}
+.glowna
+{
+	width:200px;
+	height:200px;
+	border:solid 2px;
+	float:center;
+}
 
 .produkt-koszyk
 {
@@ -89,8 +100,8 @@ body {
   margin-right:  auto;
   margin-top: 10%;
   padding-bottom: 20%;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 2%;
+  padding-right: 2%;
   text-align: center;
   border-radius: 25px;
   border-style:solid;
@@ -154,14 +165,14 @@ img
 .il
 {
 	margin-top:35px;
-	padding-left:70px;
+	width:100px;
 	float:left;
 }
 .ce
 {
 	float:left;
 	margin-top:40px;
-	padding-left:70px;
+	width:210px;
 }
 
 .ra
@@ -210,11 +221,7 @@ img
 	font-size:150%;
 	float:left;
 }
-.mniej:hover
-{
-	cursor:pointer;s
-}
-.wiecej:hover
+.mniej, .wiecej:hover
 {
 	cursor:pointer;
 }
